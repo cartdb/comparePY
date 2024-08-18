@@ -4,7 +4,7 @@ byteArr = []
 roms = []
 sizes = []
 workingDir = input("What is the current working directory? ")
-if os.path.isfile("../" + workingDir + "/script2.py") or os.path.isfile("../" + workingDir + "/script2.exe"):
+if os.path.isfile("../" + workingDir + "/compare.py") or os.path.isfile("../" + workingDir + "/compare.exe"):
     print("")
 else:
     raise Exception("Directory not found!")
