@@ -69,3 +69,5 @@ while byteLoc < sizeCheck:
     byteLoc += 1
     print(str(matchingBytes) + "/" + str(byteLoc) + " bytes match!")
 logfile.close()
+matchingByte_file.close()
+byteLoc_file.close()
