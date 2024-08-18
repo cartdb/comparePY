@@ -35,6 +35,7 @@ for sizes in range(len(byteArr)):
             sizeCheck = len(byteArr[thugs])
     break
 logfile = open("log.dat", "w")
+bytesWritten = 0
 while byteLoc < sizeCheck:
     matching = True
     romNum = 0
@@ -47,7 +48,10 @@ while byteLoc < sizeCheck:
             continue
     if matching == True:
         print("Byte " + str(hex(byteLoc)) + " matches on all files!")
-        logfile.write("Byte " + str(hex(byteLoc)) + " matches on all files!")
+        if bytesWritten == 0:
+            logfile.write("Byte " + str(hex(byteLoc)) + " matches on all files!")
+        else:
+            logfile.write("\n" + "Byte " + str(hex(byteLoc)) + " matches on all files!")
         if matchingBytes == 0:
             byteLoc_file.write(str(byteLoc))
             matchingByte_file.write(str(byteArr[0][byteLoc]))
@@ -57,6 +61,10 @@ while byteLoc < sizeCheck:
         matchingBytes += 1
     elif matching == False:
         print("Byte " + str(hex(byteLoc)) + " does not match on all files!")
-        logfile.write("Byte " + str(hex(byteLoc)) + " does not match on all files!")
+        if bytesWritten == 0:
+            logfile.write("Byte " + str(hex(byteLoc)) + " does not match on all files!")
+            bytesWritten += 1
+        else:
+            logfile.write("\n" + "Byte " + str(hex(byteLoc)) + " does not match on all files!")
     byteLoc += 1
     print(str(matchingBytes) + "/" + str(byteLoc) + " bytes match!")
