@@ -68,3 +68,4 @@ while byteLoc < sizeCheck:
             logfile.write("\n" + "Byte " + str(hex(byteLoc)) + " does not match on all files!")
     byteLoc += 1
     print(str(matchingBytes) + "/" + str(byteLoc) + " bytes match!")
+logfile.close()
