@@ -50,6 +50,7 @@ while byteLoc < sizeCheck:
         print("Byte " + str(hex(byteLoc)) + " matches on all files!")
         if bytesWritten == 0:
             logfile.write("Byte " + str(hex(byteLoc)) + " matches on all files!")
+            bytesWritten += 1
         else:
             logfile.write("\n" + "Byte " + str(hex(byteLoc)) + " matches on all files!")
         if matchingBytes == 0:
