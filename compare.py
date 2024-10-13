@@ -1,5 +1,6 @@
 import os
 import pathlib
+import sys
 byteArr = []
 roms = []
 sizes = []
