@@ -3,13 +3,13 @@ import pathlib
 byteArr = []
 roms = []
 sizes = []
-workingDir = input("What is the current working directory? ")
+workingDir = os.getcwd()
 if os.path.isfile("../" + workingDir + "/compare.py") or os.path.isfile("../" + workingDir + "/compare.exe"):
     print("")
 else:
     raise Exception("Directory not found!")
-roms.append(input("Input file: "))
-roms.append(input("Input file: "))
+roms.append(sys.argv[1])
+roms.append(sys.argv[2])
 romCount = 0
 linesWritten = 0
 byteArr.append([])
